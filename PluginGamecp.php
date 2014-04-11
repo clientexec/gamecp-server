@@ -44,9 +44,14 @@ error_reporting(0);
 */
 class PluginGamecp extends ServerPlugin
 {
-    public $usesPackageName = false;
+    public $features = array(
+        'packageName' => false,
+        'testConnection' => false,
+        'showNameservers' => false
+    );
+
     var $pluginVersion = '2.6';
-   function getVariables(){
+    function getVariables(){
         $variables = array (
                    /*T*/"Name"/*/T*/ => array (
                                         "type"=>"hidden",

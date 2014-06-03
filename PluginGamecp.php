@@ -53,92 +53,92 @@ class PluginGamecp extends ServerPlugin
     var $pluginVersion = '2.6';
     function getVariables(){
         $variables = array (
-                   /*T*/"Name"/*/T*/ => array (
+                   lang("Name") => array (
                                         "type"=>"hidden",
                                         "description"=>"Used By CE to show plugin",
                                         "value"=>"GameCP"
                                        ),
-                   /*T*/"Description"/*/T*/ => array (
+                   lang("Description") => array (
                                         "type"=>"hidden",
-                                        "description"=>/*T*/"Description viewable by admin in server settings"/*/T*/,
-                                        "value"=>/*T*/"This is the GameCP Control Module " . $this->pluginVersion . " for ClientExec"/*/T*/
+                                        "description"=>lang("Description viewable by admin in server settings"),
+                                        "value"=>lang("This is the GameCP Control Module " . $this->pluginVersion . " for ClientExec")
                                        ),
-			        /*T*/"GameCP URL"/*/T*/ => array (
+			        lang("GameCP URL") => array (
                                     "type"            =>    "text",
-                                    "description"     =>    /*T*/"This is the url to your GameCP install. Eg: http://www.gamecp.com/gcp"/*/T*/,
+                                    "description"     =>    lang("This is the url to your GameCP install. Eg: http://www.gamecp.com/gcp"),
                                     "value"           =>    ""
                                        ),
-			        /*T*/"Contact E-mail"/*/T*/ => array (
+			        lang("Contact E-mail") => array (
                                     "type"            =>    "text",
-                                    "description"     =>    /*T*/"The e-mail to send notifications to"/*/T*/,
+                                    "description"     =>    lang("The e-mail to send notifications to"),
                                     "value"           =>    ""
                                        ),
 
-				   /*T*/"Connector Passphrase"/*/T*/ => array (
+				   lang("Connector Passphrase") => array (
                                         "type"=>"text",
-                                        "description"=>/*T*/"The API Connector Password in Settings > Billing"/*/T*/,
+                                        "description"=>lang("The API Connector Password in Settings > Billing"),
                                         "value"=>""
                                        ),
 
 
-					/*T*/'package_vars'/*/T*/  => array(
+					lang('package_vars')  => array(
 										'type'            => 'hidden',
-										'description'     => /*T*/'Whether package settings are set'/*/T*/,
+										'description'     => lang('Whether package settings are set'),
 										'value'           => '0',
 									),
-					/*T*/'package_vars_values'/*/T*/ => array(
+					lang('package_vars_values') => array(
 										'type'            => 'hidden',
-										'description'     => /*T*/'GameCP Settings'/*/T*/,
+										'description'     => lang('GameCP Settings'),
 										'value'           => array(
 
 										'gcp_ipAllocation' => array(
 											'type'            => 'text',
 											'label'            => 'IP Allocation',
-											'description'     => /*T*/'1=Auto, 2=Location Addon (package addon called sv_location)'/*/T*/,
+											'description'     => lang('1=Auto, 2=Location Addon (package addon called sv_location)'),
 											'value'           => '1',
 										),
 										'gcp_gameId' => array(
 											'type'            => 'text',
 											'label'            => 'Game ID',
-											'description'     => /*T*/'Found in Manage Games'/*/T*/,
+											'description'     => lang('Found in Manage Games'),
 											'value'           => '',
 										),
 										'gcp_pubpriv' => array(
 											'type'            => 'yesno',
 											'label'            => 'Private Server',
-											'description'     => /*T*/'Server will require a password to connect'/*/T*/,
+											'description'     => lang('Server will require a password to connect'),
 											'value'           => '0',
 										),
 										'login_path' => array(
 											'type'            => 'yesno',
-											'description'     => /*T*/'Enable shell access on Linux/FreeBSD'/*/T*/,
+											'description'     => lang('Enable shell access on Linux/FreeBSD'),
 											'label'            => 'Allow SSH',
 											'value'           => '0',
 										),
 										'srv_affinty' => array(
 											'type'            => 'text',
 											'label'            => 'Affinity',
-											'description'     => /*T*/'The CPU(s) this will go on, blank, 0, 1, 2, 3'/*/T*/,
+											'description'     => lang('The CPU(s) this will go on, blank, 0, 1, 2, 3'),
 											'value'           => '',
 										),
 										'addon_tickrate' => array(
 											'type'            => 'text',
 											'label'            => 'Tickrate',
-											'description'     => /*T*/'This is used for srcds and hlds based games.'/*/T*/,
+											'description'     => lang('This is used for srcds and hlds based games.'),
 											'value'           => '',
 										),
 										'addon_fps' => array(
 											'type'            => 'text',
 											'label'            => 'FPS',
-											'description'     => /*T*/'This is used for srcds and hlds based games.'/*/T*/,
+											'description'     => lang('This is used for srcds and hlds based games.'),
 											'value'           => '',
 										)
 										),
 									),
 
-					/*T*/"Actions"/*/T*/ => array (
+					lang("Actions") => array (
 										"type"=>"hidden",
-										"description"=>/*T*/"Current actions that are active for this plugin per server"/*/T*/,
+										"description"=>lang("Current actions that are active for this plugin per server"),
 										"value"=>"Create,Delete,Suspend,UnSuspend"
 									   )
         );

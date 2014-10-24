@@ -1,9 +1,9 @@
 <?php
 /*
 
-GameCP ClientExec4.x Module
+GameCP ClientExec5.x Module
 
-Updated by William Bowman 2010
+Updated by William Bowman 2014
 Created by Billy & William Bowman 2008
 
 
@@ -14,6 +14,9 @@ Created by Billy & William Bowman 2008
 */
 
 /**  changelog
+*
+* 3.0:
+* Update for CE5 and new gamecpx 
 *
 * 2.5:
 * Update for CE4 and new gamecpx features
@@ -222,11 +225,11 @@ class PluginGamecp extends ServerPlugin
 				// update the username as it may have changed
 				preg_match_all('/USER: (?P<name>\w+) ::/', $r_result, $matches);
 				if(@$matches['name'][0] && ($matches['name'][0] != $args['package']['username'])){
-					mysql_query("UPDATE object_customfield SET value='".$matches['name'][0]."' WHERE objectid='".$args['package']['id']."' AND value='".$args['package']['username']."'");
+					//mysql_query("UPDATE object_customfield SET value='".$matches['name'][0]."' WHERE objectid='".$args['package']['id']."' AND value='".$args['package']['username']."'");
 				}
 				preg_match_all('/PASS: (?P<pass>\w+) ::/', $r_result, $pwmatch);
 				if(@$pwmatch['pass'][0] && $pwmatch['pass'][0] != $args['package']['password']){
-					mysql_query("UPDATE object_customfield SET value='".$pwmatch['pass'][0]."' WHERE objectid='".$args['package']['id']."' AND value='".$args['package']['password']."'");
+					//mysql_query("UPDATE object_customfield SET value='".$pwmatch['pass'][0]."' WHERE objectid='".$args['package']['id']."' AND value='".$args['package']['password']."'");
 				}
 
 
@@ -333,7 +336,7 @@ class PluginGamecp extends ServerPlugin
 	}
 
 	function set_all_args($args) {
-        $package = new UserPackage($args['package']['id'], $this->user);
+        $package = new UserPackage($args['package']['id']);
 
 		$clientUser = new User($args['customer']['id']);
 

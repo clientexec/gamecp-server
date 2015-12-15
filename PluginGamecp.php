@@ -16,7 +16,7 @@ Created by Billy & William Bowman 2008
 /**  changelog
 *
 * 3.0:
-* Update for CE5 and new gamecpx 
+* Update for CE5 and new gamecpx
 *
 * 2.5:
 * Update for CE4 and new gamecpx features
@@ -457,12 +457,12 @@ class PluginGamecp extends ServerPlugin
 		preg_match_all('/USER: (?P<name>\w+) ::/', $r_result, $matches);
 
 		if(@$matches['name'][0] && (@$matches['name'][0] != $args['package']['username'])){
-			mysql_query("UPDATE object_customfield SET value='".$matches['name'][0]."' WHERE objectid='".$args['package']['id']."' AND value='".$args['package']['username']."'");
+			$this->db->query("UPDATE object_customfield SET value='".$matches['name'][0]."' WHERE objectid='".$args['package']['id']."' AND value='".$args['package']['username']."'");
 			$res= true;
 		}
 		preg_match_all('/PASS: (?P<pass>\w+) ::/', $r_result, $pwmatch);
 		if(@$pwmatch['pass'][0] && @$pwmatch['pass'][0] != $args['package']['password']){
-			mysql_query("UPDATE object_customfield SET value='".$pwmatch['pass'][0]."' WHERE objectid='".$args['package']['id']."' AND value='".$args['package']['password']."'");
+			$this->db->query("UPDATE object_customfield SET value='".$pwmatch['pass'][0]."' WHERE objectid='".$args['package']['id']."' AND value='".$args['package']['password']."'");
 		}
 
 		if(@$matches['name'][0] == $args['package']['username']) $res= true;

@@ -50,7 +50,8 @@ class PluginGamecp extends ServerPlugin
     public $features = array(
         'packageName' => false,
         'testConnection' => false,
-        'showNameservers' => false
+        'showNameservers' => false,
+        'upgrades' => true
     );
 
     var $pluginVersion = '2.6';
